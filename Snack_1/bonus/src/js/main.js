@@ -35,3 +35,22 @@ for (let i = 0; i < bikes.length; i++) {
 	}
 }
 console.log(`La bici piu' leggera e' ${lighterBikeName} con un peso di ${lighterBikeWeight} kg.`);
+
+//BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
+console.log('BONUS:');
+
+const getLighterBike = (array) => {
+	let tmp;
+	let tmpObj;
+	for (let i = 0; i < array.length; i++) {
+		const element = array[i];
+		const { weight } = element;
+		if (tmp == undefined || tmp > weight) {
+			tmp = weight;
+			tmpObj = element;
+		}
+	}
+	return tmpObj;
+};
+
+console.log(getLighterBike(bikes));
