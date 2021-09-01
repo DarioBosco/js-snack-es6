@@ -16,15 +16,15 @@ function getElementsInBetweenForEach(array, start, end) {
 	});
 }
 
-const forEachNumbers = getElementsInBetweenFilter(numbers, 5, 9);
-console.log(forEachNumbers);
+const forEachNumbers = getElementsInBetweenFilter(numbers, 0, 4);
+console.log('forEach: ', forEachNumbers);
 
-/* Utilizzando forEach */
+/* Utilizzando filter */
 function getElementsInBetweenFilter(array, start, end) {
 	return array.filter((element, index) => {
 		return start <= index && end >= index;
 	});
 }
 
-const filterNumbers = getElementsInBetweenFilter(numbers, 0, 4);
-console.log(filterNumbers);
+const filterNumbers = getElementsInBetweenFilter(numbers, 5, 9);
+console.log('filter: ', filterNumbers);
