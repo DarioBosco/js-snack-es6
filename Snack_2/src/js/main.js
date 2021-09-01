@@ -25,10 +25,7 @@ for (let i = 0; i < teams.length; i++) {
 	element.sufferedPenalties = randomInt(1, 10);
 	//Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 	const { name, scores } = element;
-	insights.push({
-		name: name,
-		scores: scores,
-	});
+	insights.push({ name, scores });
 }
 
 console.log(insights);
