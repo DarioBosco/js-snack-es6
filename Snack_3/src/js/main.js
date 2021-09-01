@@ -6,19 +6,25 @@ Usiamo i nuovi metodi degli array foreach o filter.
 
 const numbers = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
 
-const getElementsInBetween = (array, start, end) => {
-	const newArray = [];
-	if (start < end) {
-		array.forEach((element, index) => {
-			if (start <= index && end >= index) {
-				newArray.push(element);
-			}
-		});
-	} else {
-		console.log('I valori inseriti non sono validi');
-	}
-	console.log(newArray);
-	return;
-};
+/* Utilizzando forEach */
+function getElementsInBetweenForEach(array, start, end) {
+	tmpArray = [];
+	return array.forEach((element, index) => {
+		if (start <= index && end >= index) {
+			tmpArray.push(element);
+		}
+	});
+}
 
-getElementsInBetween(numbers, 2, 7);
+const forEachNumbers = getElementsInBetweenFilter(numbers, 5, 9);
+console.log(forEachNumbers);
+
+/* Utilizzando forEach */
+function getElementsInBetweenFilter(array, start, end) {
+	return array.filter((element, index) => {
+		return start <= index && end >= index;
+	});
+}
+
+const filterNumbers = getElementsInBetweenFilter(numbers, 0, 4);
+console.log(filterNumbers);
