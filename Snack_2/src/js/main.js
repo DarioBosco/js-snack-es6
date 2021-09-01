@@ -14,12 +14,12 @@ const teams = [
 //Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti
 const insights = [];
 
+//Funzione per generare il numero random
+const randomInt = (min, max) => {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+};
 for (let i = 0; i < teams.length; i++) {
 	const element = teams[i];
-	//Funzione per generare il numero random
-	const randomInt = (min, max) => {
-		return Math.floor(Math.random() * (max - min + 1) + min);
-	};
 	//Assegno i numeri random alle proprietà scores e sufferedPenalties
 	element.scores = randomInt(1, 10);
 	element.sufferedPenalties = randomInt(1, 10);
